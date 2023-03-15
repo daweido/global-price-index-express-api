@@ -1,5 +1,3 @@
 export const domainRoutes = {
-  binance: "/binance",
-  huobi: "/huobi",
-  kraken: "/kraken",
+  globalPriceIndex: "/global-price-index",
 };

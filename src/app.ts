@@ -1,8 +1,6 @@
 import express from "express";
 import { domainRoutes } from "./consts";
-import { binanceRouter } from "./domains/binance/routes";
-import { huobiRouter } from "./domains/huobi/routes";
-import { krakenRouter } from "./domains/kraken/routes";
+import { globalPriceIndexRouter } from "./domains/globalPriceIndex/routes";
 
 const app = express();
 const port = 3000;
@@ -14,9 +12,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use(domainRoutes.binance, binanceRouter);
-app.use(domainRoutes.kraken, krakenRouter);
-app.use(domainRoutes.huobi, huobiRouter);
+app.use(domainRoutes.globalPriceIndex, globalPriceIndexRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
