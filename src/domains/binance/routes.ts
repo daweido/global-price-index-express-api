@@ -1,7 +1,7 @@
 import express from "express";
 import {
-	getBinanceGlobalPriceIndex,
-	getBinanceGlobalPriceIndexWS,
+  getBinanceGlobalPriceIndex,
+  getBinanceGlobalPriceIndexWS,
 } from "./controller";
 
 export const binanceRouter = express.Router();

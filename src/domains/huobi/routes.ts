@@ -1,7 +1,7 @@
 import express from "express";
 import {
-	getHuobiGlobalPriceIndex,
-	getHuobiGlobalPriceIndexWS,
+  getHuobiGlobalPriceIndex,
+  getHuobiGlobalPriceIndexWS,
 } from "./controller";
 
 export const huobiRouter = express.Router();

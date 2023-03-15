@@ -1,7 +1,7 @@
 export const getKrakenGlobalPriceIndex = (req, res) => {
-	res.json({ message: "kraken REST" });
+  res.json({ message: "kraken REST" });
 };
 
 export const getKrakenGlobalPriceIndexWS = (req, res) => {
-	res.json({ message: "kraken WS" });
+  res.json({ message: "kraken WS" });
 };

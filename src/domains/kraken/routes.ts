@@ -1,7 +1,7 @@
 import express from "express";
 import {
-	getKrakenGlobalPriceIndex,
-	getKrakenGlobalPriceIndexWS,
+  getKrakenGlobalPriceIndex,
+  getKrakenGlobalPriceIndexWS,
 } from "./controller";
 
 export const krakenRouter = express.Router();

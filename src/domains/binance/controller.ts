@@ -1,7 +1,7 @@
 export const getBinanceGlobalPriceIndex = (req, res) => {
-	res.json({ message: "binance REST" });
+  res.json({ message: "binance REST" });
 };
 
 export const getBinanceGlobalPriceIndexWS = (req, res) => {
-	res.json({ message: "binance WS" });
+  res.json({ message: "binance WS" });
 };
