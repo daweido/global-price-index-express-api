@@ -1,15 +1,9 @@
-import { getBinanceMidPrice } from "../binance/service";
-import { getHuobiMidPrice } from "../huobi/service";
-import { getKrakenMidPrice } from "../kraken/service";
+import { getGlobalPriceIndexService } from "./service";
 
 export const getGlobalPriceIndex = async (req, res) => {
-  const binanceMidPrice = await getBinanceMidPrice();
-  const krakenMidPrice = await getKrakenMidPrice();
-  const huobiMidPrice = await getHuobiMidPrice();
+  const globalPriceIndex = await getGlobalPriceIndexService();
 
-  // console.log(orderBook);
-
-  res.json({ binanceMidPrice, krakenMidPrice, huobiMidPrice });
+  res.json({ globalPriceIndex });
 };
 
 export const getGlobalPriceIndexWS = (req, res) => {
