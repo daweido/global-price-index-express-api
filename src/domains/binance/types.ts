@@ -8,3 +8,35 @@ export type BinanceOrderBook = {
   bids: BinanceMarketOrder[];
   asks: BinanceMarketOrder[];
 };
+
+export type BinanceOrderBookTick = {
+  /**
+   * order book updateId
+   */
+  u: number;
+
+  /**
+   * symbol
+   */
+  s: string;
+
+  /**
+   * best bid price
+   */
+  b: string;
+
+  /**
+   * best bid qty
+   */
+  B: string;
+
+  /**
+   * best ask price
+   */
+  a: string;
+
+  /**
+   * best ask qty
+   */
+  A: string;
+};

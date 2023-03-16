@@ -1,4 +1,7 @@
-import { getGlobalPriceIndexService } from "./service";
+import {
+  getGlobalPriceIndexService,
+  getGlobalPriceIndexServiceWS,
+} from "./service";
 
 export const getGlobalPriceIndex = async (req, res) => {
   const globalPriceIndex = await getGlobalPriceIndexService();
@@ -6,6 +9,8 @@ export const getGlobalPriceIndex = async (req, res) => {
   res.json({ globalPriceIndex });
 };
 
-export const getGlobalPriceIndexWS = (req, res) => {
-  res.json({ message: "global WS" });
+export const getGlobalPriceIndexWS = async (req, res) => {
+  const globalPriceIndex = await getGlobalPriceIndexServiceWS();
+
+  res.json({ globalPriceIndex });
 };

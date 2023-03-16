@@ -1,7 +1,6 @@
 import axios from "axios";
 import { calculateMidPrice } from "../../utils/calculateMidPrice";
 import { HuobiOrderBook } from "./types";
-
 const getHuobiOrderBook = async (): Promise<HuobiOrderBook | undefined> => {
   const res = await axios.get<HuobiOrderBook>(
     "https://api.huobi.pro/market/depth?symbol=btcusdt&depth=5&type=step0"

@@ -4,6 +4,7 @@ specifiers:
   '@types/express': ^4.17.17
   '@types/jest': ^29.4.3
   '@types/node': ^18.15.3
+  '@types/ws': ^8.5.4
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
   axios: ^1.3.4
@@ -16,16 +17,19 @@ specifiers:
   ts-node: ^10.9.1
   ts-node-dev: ^2.0.0
   typescript: ^4.9.5
+  ws: ^8.13.0
 
 dependencies:
   axios: 1.3.4
   ejs: 3.1.9
   express: 4.18.2
+  ws: 8.13.0
 
 devDependencies:
   '@types/express': 4.17.17
   '@types/jest': 29.4.3
   '@types/node': 18.15.3
+  '@types/ws': 8.5.4
   '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
   '@typescript-eslint/parser': 5.55.0_vgl77cfdswitgr47lm5swmv43m
   eslint: 8.36.0
@@ -903,6 +907,12 @@ packages:
 
   /@types/strip-json-comments/0.0.30:
     resolution: {integrity: sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==}
+    dev: true
+
+  /@types/ws/8.5.4:
+    resolution: {integrity: sha512-zdQDHKUgcX/zBc4GrwsE/7dVdAD8JR4EuiAXiiUhhfyIJXXb2+PrGshFyeXWQPMmmZ2XxgaqclgpIC7eTXc1mg==}
+    dependencies:
+      '@types/node': 18.15.3
     dev: true
 
   /@types/yargs-parser/21.0.0:
@@ -3651,6 +3661,19 @@ packages:
       imurmurhash: 0.1.4
       signal-exit: 3.0.7
     dev: true
+
+  /ws/8.13.0:
+    resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+    dev: false
 
   /xtend/4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}

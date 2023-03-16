@@ -1,6 +1,7 @@
 import axios from "axios";
 import { calculateMidPrice } from "../../utils/calculateMidPrice";
-import { BinanceOrderBook } from "./types";
+import { BinanceOrderBook, BinanceOrderBookTick } from "./types";
+import WebSocket from "ws";
 
 const getBinanceOrderBook = async (): Promise<BinanceOrderBook | undefined> => {
   const res = await axios.get<BinanceOrderBook>(
@@ -21,4 +22,31 @@ export const getBinanceMidPrice = async () => {
   const orderBook = await getBinanceOrderBook();
 
   return calculateBinanceMidPrice(orderBook);
+};
+
+export const getBinanceOrderBookWS =
+  async (): Promise<BinanceOrderBookTick> => {
+    return new Promise((resolve) => {
+      const ws = new WebSocket(
+        "wss://stream.binance.com:9443/ws/btcusdt@bookTicker"
+      );
+
+      ws.on("message", function message(data) {
+        ws.close();
+        resolve(JSON.parse(data.toString()));
+      });
+    });
+  };
+
+const calculateBinanceMidPriceWS = (bookTick: BinanceOrderBookTick) => {
+  const bestAsk = +bookTick.a;
+  const bestBid = +bookTick.b;
+
+  return calculateMidPrice(bestAsk, bestBid);
+};
+
+export const getBinanceMidPriceWS = async () => {
+  const bookTick = await getBinanceOrderBookWS();
+
+  return calculateBinanceMidPriceWS(bookTick);
 };
