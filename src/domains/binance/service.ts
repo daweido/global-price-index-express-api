@@ -3,7 +3,6 @@ import { calculateMidPrice } from "../../utils/calculateMidPrice";
 import { BinanceOrderBook } from "./types";
 
 const getBinanceOrderBook = async (): Promise<BinanceOrderBook | undefined> => {
-  // TODO handleError
   const res = await axios.get<BinanceOrderBook>(
     "https://api.binance.com/api/v3/depth?limit=1&symbol=BTCUSDT"
   );
